@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PersonelMVCUI.Models.EntityFreamework.Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Personelleri Listele</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Dogum Tarihi</th>
+        <th>Maas</th>
+                </tr>
+    </thead>
+    <tbody>
+        @foreach (var personel in Model)
+        {
+        <tr>
+            <td>@personel.Ad</td>
+            <td>@personel.Soyad</td>
+            <td>@personel.DogumTarihi.Value.ToShortDateString()</td>
+            <td>@personel.Maas  TL</td>
+        </tr>
+        }
+    </tbody>
+</table>
